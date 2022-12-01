@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuctionClient service</title>
+    <script src="./auctionclient.js"></script>
+</head>
+<body>
+    <h1>The Auction House</h1>
+    <div>
+        <input type="text" id="sendItemInputField">
+        <button type = "button" onclick="sendItem()">Send in your item to sell</button>
+        <input type="Text" id="bidField">
+        <button type="button" onclick="bid()"> Bid on the current item!</button>
+        <hr>
+        <h3 id="currentItem"> No item currently being auctioned off</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th> Item </th>
+                    <th> User </th>
+                    <th> Price </th>
+                </tr>
+            </thead>
+            <tbody id="offerTable">
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h2> History </h2>
+    <table>
+        <thead>
+            <tr>
+                <th> Item </th>
+                <th> User </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody id="historyTable"></tbody>
+    </table>
+    <hr>
+    <h3> Live user log</h3>
+    <ul id="userlog">
+
+    </ul>
+    <hr>
+    <h2> Admin stuff - keep out</h2>
+    <hr>
+    <button type="button" onclick="requestAdmin()">Request administrator access</button>
+    <div id="adminRestricted" style="display: none;">
+        <div>unfortunately, the scope of this contract did not involve security :) </div>
+        <button type="button" onclick="endBidding()"> End bidding</button>
+    </div>
+</body>
+</html>
