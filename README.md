@@ -51,3 +51,9 @@ needs testing, docker & script
 ### Service 99:
 Service 1's SOAP consuming app in Node. Out of personal experience, I can assure you that consuming soap is not recommended.
 NOT finished whatsoever lmao what is soap
+
+
+### Service 7: laravel
+in: /PEs/7_2_laravel_restart/activity_tracker
+./vendor/bin/sail up
+phpmyadmin op: -8081:80, logt automatisch in?
