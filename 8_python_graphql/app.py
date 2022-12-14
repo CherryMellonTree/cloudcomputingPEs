@@ -10,10 +10,12 @@ repo.add_student(helper.student(name = "Jack Smith", coursedict = {"lawson": 19}
 repo.add_student(helper.student(name = "Jack Smith",coursedict = {"law": 4}))
 
 result = repo.get_student("Jack Smith")
-print(result)
+#print(result)
 
 
-# schema = gph.Schema(query=helper.Query)
+schema = gph.Schema(query=helper.Query)
 
-# myWebApp = Flask("My App")
-# myWebApp.add_url_rule('/graphql', view_func = GraphQLView.as_view('graphql', schema=schema, graphiql=True))
+myWebApp = Flask("My App")
+myWebApp.add_url_rule('/graphql', view_func = GraphQLView.as_view('graphql', schema=schema, graphiql=True))
+
+myWebApp.run()

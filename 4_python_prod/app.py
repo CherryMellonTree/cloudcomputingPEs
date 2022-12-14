@@ -1,5 +1,5 @@
 import requests
-from flask import Flask
+from flask import Flask, request
 #, request, jsonify, Response
 import json
 
@@ -27,8 +27,8 @@ def returnQuote():
 def add_quote():
     try:
         input_json = json.loads(request.data)
-        print(input_json)
-        return {"success": True, "message": "Added the thingy to the thingy"}, 200
+        quotes.append(input_json["content"])
+        return {"success": True, "message": "Added the quote to the repository. Getting a random quote from them will be implemented at a later date :)."}, 200
     except:
         return {"success": False, "message": "Body must be in a JSON-format, or something went wrong later down the line :)"}, 400
 
