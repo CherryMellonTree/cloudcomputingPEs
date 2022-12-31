@@ -18,7 +18,7 @@ goodQuote = requests.request(
 )
 printFancy("A mediocre quote:", goodQuote.text)
 newQuote = requests.request(method="POST",url="http://127.0.0.1:5000/quote/add",json={'content':'This is a brand-new quote'} )
-printFancy("Trying to add new quote", newQuote.json()['message'])
+printFancy("Trying to add new quote", newQuote.json())
 
 getNewQuote = requests.request(method="GET", url="http://127.0.0.1:5000/quote/added")
 printFancy("The most recently added quote is:", getNewQuote.text)

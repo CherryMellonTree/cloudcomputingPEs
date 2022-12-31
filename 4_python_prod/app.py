@@ -1,39 +1,38 @@
 import requests
-from flask import Flask, request
-#, request, jsonify, Response
+from flask import Flask, request, jsonify
+
 import json
 
-#from flask_cors import CORS
 quotes = ["dummy"]
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def hello_world():
-    return "Goodbye cruel world"
+    return jsonify({"message":"Goodbye cruel world"})
 
-@app.route("/quote/good")
+@app.route("/quote/good", methods=["GET"])
 def get_quote():
-    return "People who go looking for good quotes don't deserve good quotes"
+    return jsonify({"message":"People who go looking for good quotes don't deserve good quotes"})
 
-@app.route("/quote/mediocre")
+@app.route("/quote/mediocre", methods=["GET"])
 def somewhat_quote():
-    return "It was the best of quotes. It was the worst of quotes. It was a quote as much as recent quotes that those in a position of power only wanted it to be seen in superlatives."
-@app.route("/quote/added")
+    return jsonify({"message":"It was the best of quotes. It was the worst of quotes. It was a quote as much as recent quotes that those in a position of power only wanted it to be seen in superlatives."})
+@app.route("/quote/added", methods=["GET"])
 def returnQuote():
-    return quotes[-1]
+    return jsonify({"message":quotes[-1]})
 
 @app.route("/quote/add", methods=["POST"])
 def add_quote():
     try:
         input_json = json.loads(request.data)
         quotes.append(input_json["content"])
-        return {"success": True, "message": "Added the quote to the repository. Getting a random quote from them will be implemented at a later date :)."}, 200
+        return jsonify({"success": True, "message": "Added the quote to the repository. Getting a random quote from them will be implemented at a later date :)."})
     except:
-        return {"success": False, "message": "Body must be in a JSON-format, or something went wrong later down the line :)"}, 400
+        return jsonify({"success": False, "message": "Body must be in a JSON-format, or something went wrong later down the line :)"})
 
 
-@app.route("/quote")
+@app.route("/quote", methods=["GET"])
 def quote_thing():
     return "A person once said: 'This is a quote'"
 

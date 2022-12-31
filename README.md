@@ -4,18 +4,24 @@ Done:
 > PythonCons: dockerised python with REST (cons)  
 > nodeAuctionwebsockets: dockerised node with websockets (prod & cons)  
 > PythonProd: dockerised python with REST (prod)
-> node axios: dockerised node with axios (REST?) (cons)
+> node axios: dockerised node with axios (cons)
 
 TODO:
-> 5x service (prod) van in de les => SOAP c#, node websockets => **3**
-
-> 3x service (prod) *buiten* de les => **3**
+> 5x service (prod) van in de les => SOAP c#, node websockets => **2: graphql, gRPC**
+done: soap+dotnet, node+sockets, laravel+rest
+todo: python+graphql, java+grpc
+> 3x service (prod) *buiten* de les => **2**
+done: python+rest
+todo: 2 TBD (node pls help?)
 > 1x VM, 4x docker => **1VM, 1/0docker**
 > 5x consumption (over 2 talen)
 1x python rest, 1x websockets node, 1x rest node => **2**
 > 1x swarm/kubernetes => **1**
 > 1x creatief SOA concept => **1**
 
+CONCEPTS:
+- graphQL: student gradebook
+- gRPC: achievement blog database?
 
 ### Service 1:
 Soap-service in C#, designed to share payment over multiple people so they can return to split the bill at a later date
@@ -48,12 +54,16 @@ getFemaleUser --isFemale=true : (or false) to get a female or male user respecti
 example command: node namegenerator.js password --req="lower"  
 needs testing, docker & script
 
+### Service 7: laravel
+1. sudo /opt/lampp/manager-linux-x64.run & start sql-server
+2. php artisan serve
+
+indien nodig (voor apache-server):
+- sudo netstat -nlpt |grep 80
+- sudo service apache2 stop
+
 ### Service 99:
 Service 1's SOAP consuming app in Node. Out of personal experience, I can assure you that consuming soap is not recommended.
 NOT finished whatsoever lmao what is soap
 
 
-### Service 7: laravel
-in: /PEs/7_2_laravel_restart/activity_tracker
-./vendor/bin/sail up
-phpmyadmin op: -8081:80, logt automatisch in?
