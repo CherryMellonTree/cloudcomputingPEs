@@ -5,22 +5,22 @@ Done:
 > nodeAuctionwebsockets: dockerised node with websockets (prod & cons)  
 > PythonProd: dockerised python with REST (prod)
 > node axios: dockerised node with axios (cons)
-
+> python+graphql prod
+> python+graphql cons
 TODO:
 > 5x service (prod) van in de les => SOAP c#, node websockets => **2: graphql, gRPC**
 done: soap+dotnet, node+sockets, laravel+rest
-todo: python+graphql, java+grpc
+todo: java+grpc
 > 3x service (prod) *buiten* de les => **2**
 done: python+rest
 todo: 2 TBD (node pls help?)
-> 1x VM, 4x docker => **1VM, 1/0docker**
+> 1x VM, 4x docker => **0**
 > 5x consumption (over 2 talen)
 1x python rest, 1x websockets node, 1x rest node => **2**
 > 1x swarm/kubernetes => **1**
 > 1x creatief SOA concept => **1**
 
 CONCEPTS:
-- graphQL: student gradebook
 - gRPC: achievement blog database?
 
 ### Service 1:
@@ -58,9 +58,18 @@ needs testing, docker & script
 1. sudo /opt/lampp/manager-linux-x64.run & start sql-server
 2. php artisan serve
 
-indien nodig (voor apache-server):
+if needed (for apache-server):
 - sudo netstat -nlpt |grep 80
 - sudo service apache2 stop
+
+### Service 8: graphql
+a small gradebook-like service using graphQL
+to run this from a seperate location:
+1. start the VM & the service
+2. ssh -L 8080:localhost:8080 potato@192.168.1.130
+
+### Service 9:
+Consumption of service 8 with a fun little UI and thingsies
 
 ### Service 99:
 Service 1's SOAP consuming app in Node. Out of personal experience, I can assure you that consuming soap is not recommended.

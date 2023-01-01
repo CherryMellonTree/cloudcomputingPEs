@@ -26,12 +26,12 @@ studentType(name = "Steve Steveson", coursedict = [myClass(coursename="law",cour
 ]
 
 class Query(graphene.ObjectType):
-    allstudents = graphene.Field(graphene.List(studentType))
+    allstudents = graphene.Field(graphene.List(studentType), description="Returns a list of all students' names")
     
     def resolve_allstudents(self, info, **kwargs):
         return student_list
 
-    getstudent = graphene.Field(studentType, name=graphene.String(required=True))
+    getstudent = graphene.Field(studentType, name=graphene.String(required=True), description="Get all the information of a student, using their name")
     def resolve_getstudent(parent, info, name):
         dummystudent = studentType(name = "Not Found", coursedict = [myClass(coursename="fake course", coursescore="0")])
         for student in student_list:
@@ -39,7 +39,7 @@ class Query(graphene.ObjectType):
                 dummystudent = student
         return dummystudent
     
-    addClassToStudent = graphene.Field(studentType, name=graphene.String(required=True), course=graphene.String(required=True), score=graphene.String(required=True))
+    addClassToStudent = graphene.Field(studentType, name=graphene.String(required=True), course=graphene.String(required=True), score=graphene.String(required=True), description="Add a course with its details to a student")
     def resolve_addClassToStudent(parent, info, name, course, score):
         dummystudent = studentType(name = "Not Found", coursedict = [myClass(coursename="fake course", coursescore="0")])
         for student in student_list:
@@ -47,3 +47,9 @@ class Query(graphene.ObjectType):
                 student.coursedict.append(myClass(coursename=course, coursescore=score))
                 dummystudent = student
         return dummystudent
+
+    addStudent = graphene.Field(studentType, studentname=graphene.String(required=True), description="Add a new student. They will, following standard procedure, be enrolled into Law automatically.")
+    def resolve_addStudent(parent,info,studentname):
+        new = studentType(name=studentname, coursedict=[myClass(coursename="law",coursescore=5)])
+        student_list.append(new)
+        return new
