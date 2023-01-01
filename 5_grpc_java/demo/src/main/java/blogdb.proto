@@ -17,7 +17,6 @@ message BlogpostComment{
     string author = 3;
     string comment = 4;
     bool positive = 5;
-
 };
 
 message BlogpostID{
@@ -32,10 +31,29 @@ message BlogpostCommentAddSuccess{
     bool success = 1;
 };
 
+message BlogpostListRequest{};
+
+message BlogpostList{
+    repeated Blogpost blogposts = 1;
+};
+
+message BlogpostSearchRequest{
+    string keywords = 1;
+};
+
+message BlogpostSearchResults{
+    repeated Blogpost blogposts = 1;
+};
+
+message BlogpostLikeSuccess{
+    bool success = 1;
+};
 
 service BlogService{
     rpc addBlogpost(Blogpost) returns (BlogpostAddSuccess);
     rpc getBlogpost(BlogpostID) returns (Blogpost);
     rpc addBlogpostComment(BlogpostComment) returns (BlogpostCommentAddSuccess);
-
+    rpc getBlogposts(BlogpostListRequest) returns (BlogpostList);
+    rpc searchBlogposts(BlogpostSearchRequest) returns (BlogpostSearchResults);
+    rpc likeBlogpost(BlogpostID) returns (BlogpostLikeSuccess);
 };
