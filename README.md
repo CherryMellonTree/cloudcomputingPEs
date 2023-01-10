@@ -8,13 +8,12 @@ Done:
 > node axios: dockerised node with axios (cons) [4/5 mand cons]
 > laravel shoppinglist [4/5 mand prod, 5/5 mand cons]
 > python+graphql prod [5/5 mand prod]
-> python+graphql cons [ 6/5 extra cons]
->
+> python+graphql cons [ 6/5 extra cons, technically a repeat opt prod]
+> node+graphql [2/3 opt prod]
+> node+REST [3/3 opt prod]
+
+> TODO EXTRA: node REST?
 TODO:
-> 5x service (prod) van in de les => SOAP c#, node websockets => **done**
-> 3x service (prod) *buiten* de les => **2**
-done: python+rest
-todo: 2 TBD (node pls help?)
 > 1x creatief SOA concept => **1**
 
 
@@ -73,8 +72,11 @@ to run this from a seperate location:
 ### Service 9:
 Consumption of service 8 with a web interface.
 
-### Service 99:
-Service 1's SOAP consuming app in Node. Out of personal experience, I can assure you that consuming soap is not recommended.
-NOT finished whatsoever lmao what is soap
+### Service 91:
+A graphQL service that, if properly working, would provide deepfakes of certain statements. Unfortunately, that technology is not available to me right now so it simply returns text :).
+It has a couple of simple test-calls, including a deprecated one. I may revisit this later in an attempt to add more constraints to the submitted data
+
+### Serivce 92
+node/rest/express, a very simple API meant to demonstrate the basic implementation of some things I hadn't covered yet, like error handling & authorization. 
 
 
