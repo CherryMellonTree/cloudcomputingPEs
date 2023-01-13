@@ -19,19 +19,20 @@ wss.on('connection', ws => {
     })
 })
 
-function onJoin(ws){
+function onJoin(client){
     console.log("connection established")
     clients ++;
     usedID = clients;
     console.log({id: usedID, date:new Date()});
-    clientData.set(ws, {id: usedID, date:new Date()})
-    ws.send("welcome to my websocket");
+    clientData.set(client, {id: usedID, date:new Date()})
+    client.send("welcome to my websocket");
     fullHistory.forEach( h => {
-        ws.send("H " + h);
+        client.send("H " + h);
     })
-    ws.send("D " + currentItem);
-    wss.clients.forEach(client => {
-        client.send("U " + client + " : A client has joined the service");
+    client.send("D " + currentItem);
+    wss.clients.forEach(thisone => {
+        id = clientData.get(client).id
+        thisone.send("U Client with ID: " + id + " has joined the auction");
     })
 
 }
@@ -87,16 +88,8 @@ async function triggerMessageEvent(ws, msg){
     }
 }
 function clientLeft(client_left, msg){
-    console.log(msg)
-    console.log(client_left)
-    function toon(key, value) {
-        console.log(key['id']);
-        console.log(value)
-    }
-    clientData.forEach(toon);
-    console.log(client_left)
     wss.clients.forEach(client => {
         id = clientData.get(client_left).id
-        client.send("U " + id + "A client has left the service");
+        client.send("U Client with ID: " + id + " has left the auction");
     })
 }

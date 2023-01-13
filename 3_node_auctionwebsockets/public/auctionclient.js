@@ -11,7 +11,6 @@ mySocket.addEventListener('message', evt => {
 function sendMsg(payload) {
     if (mySocket.readyState == WebSocket.OPEN) {
         mySocket.send(payload);
-        console.log("msg sent");
     }
 }
 

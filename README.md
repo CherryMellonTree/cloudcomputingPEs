@@ -12,15 +12,19 @@ Done:
 > node+graphql [2/3 opt prod]
 > node+REST [3/3 opt prod]
 
-> TODO EXTRA: node REST?
-TODO:
-> 1x creatief SOA concept => **1**
-
+services with container:
+- 1 (soap dotnet)
+- 2 & 4 (python prod & cons)
+- 3 (websockets prod & cons)
+- 8 (graphql prod, on VM, does this count?)
+- 91 & 92 (node + graphql/rest)
 
 ### Service 1:
 Soap-service in C#, designed to share payment over multiple people so they can return to split the bill at a later date
 Finished
-run_soap1.sh
+/etc/init.d/apache2 stop
+run_1soapdotnet.sh
+http://localhost/Service.asmx
 
 ### Service 2:
 consumes the quotes from 4, unsure if elaborate enough to qualify for this assignment.
@@ -57,7 +61,7 @@ example commands:
 ### Service 7: laravel
 A service to keep track of your shopping list across multiple stores. Could use some additions to its functionality, 
 1. sudo /opt/lampp/manager-linux-x64.run & start sql-server
-2. php artisan serve
+2. php artisan serve (from within shoppinglist)
 
 if needed (for apache-server):
 - sudo netstat -nlpt |grep 80
