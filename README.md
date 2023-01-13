@@ -78,5 +78,7 @@ It has a couple of simple test-calls, including a deprecated one. I may revisit 
 
 ### Serivce 92
 node/rest/express, a very simple API meant to demonstrate the basic implementation of some things I hadn't covered yet, like error handling & authorization. 
+It contains 2 versions. Firstly, there is POC.js, which is simply a POC and stores unspecified 'messages'. The second one is nodeapp.js and should make more sense in the context of some of the other services, but its finished status is less certain at this point in time. It is meant to be a paymentservice app, similar to service1, but functions as a log of transactions where service#1 focusses on people's relative debt to each other.
+
 
 
