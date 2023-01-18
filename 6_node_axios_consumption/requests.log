@@ -1,3 +1,14 @@
 11:01:23.305 INFO  https://randomuser.me/api/?results=6 
 11:02:31.712 INFO  https://randomuser.me/api/?results=6 
 11:03:16.739 INFO  https://randomuser.me/api/?password=upper 
+12:28:10.237 INFO  https://randomuser.me/api/?results=5 
+12:28:50.343 INFO  https://randomuser.me/api/?password=lower 
+12:34:08.975 INFO  https://randomuser.me/api/?gender=male 
+12:39:59.891 INFO  https://randomuser.me/api/?gender=female 
+12:40:03.248 INFO  https://randomuser.me/api/?gender=male 
+15:29:32.327 INFO  https://randomuser.me/api/?password=lower 
+15:30:15.815 INFO  https://randomuser.me/api/?results=7 
+15:31:23.856 INFO  https://randomuser.me/api/?gender=male 
+15:31:32.072 INFO  https://randomuser.me/api/?gender=male 
+15:31:41.119 INFO  https://randomuser.me/api/?gender=male 
+15:31:47.974 INFO  https://randomuser.me/api/?gender=female 

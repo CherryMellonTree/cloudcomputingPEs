@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "smblWYZP3yUKfg15zWNMoFgyBs6G+tU2oeAMGkQGEOoQQY4/F9g7W3m5WBm/s46aIhSqVqE65WpS4QKY4Xd8Nw==",
+  "dgSpecHash": "hUVLVdEQVtBkOS6f8X7raJFdPrx5NVKkQwItZeUND/BZfrnP0sbtPZJp8/SEh37SF1R4n/c2RUnhDab43BNDqw==",
   "success": true,
-  "projectFilePath": "/home/genericpotato/Desktop/git/transactionbot/soap/web2.csproj",
+  "projectFilePath": "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/web2.csproj",
   "expectedPackageFiles": [
     "/home/genericpotato/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/home/genericpotato/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",

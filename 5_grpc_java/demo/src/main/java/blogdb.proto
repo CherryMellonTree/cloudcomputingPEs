@@ -1,0 +1,59 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package be.cloud;
+
+message Blogpost{
+    int32 id = 1;
+    string author = 2;
+    string title = 3;
+    bool important = 4;
+    string description = 5;
+    repeated BlogpostComment comments = 6;
+};
+
+message BlogpostComment{
+    int32 blogpostID = 1;
+    int32 cid = 2;
+    string author = 3;
+    string comment = 4;
+    bool positive = 5;
+};
+
+message BlogpostID{
+    int32 id = 1;
+};
+
+message BlogpostAddSuccess{
+    bool success = 1;
+};
+
+message BlogpostCommentAddSuccess{
+    bool success = 1;
+};
+
+message BlogpostListRequest{};
+
+message BlogpostList{
+    repeated Blogpost blogposts = 1;
+};
+
+message BlogpostSearchRequest{
+    string keywords = 1;
+};
+
+message BlogpostSearchResults{
+    repeated Blogpost blogposts = 1;
+};
+
+message BlogpostLikeSuccess{
+    bool success = 1;
+};
+
+service BlogService{
+    rpc addBlogpost(Blogpost) returns (BlogpostAddSuccess);
+    rpc getBlogpost(BlogpostID) returns (Blogpost);
+    rpc addBlogpostComment(BlogpostComment) returns (BlogpostCommentAddSuccess);
+    rpc getBlogposts(BlogpostListRequest) returns (BlogpostList);
+    rpc searchBlogposts(BlogpostSearchRequest) returns (BlogpostSearchResults);
+    rpc likeBlogpost(BlogpostID) returns (BlogpostLikeSuccess);
+};

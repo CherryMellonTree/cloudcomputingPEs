@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/genericpotato/Desktop/git/transactionbot/soap/web2.csproj": {}
+    "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/web2.csproj": {}
   },
   "projects": {
-    "/home/genericpotato/Desktop/git/transactionbot/soap/web2.csproj": {
+    "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/web2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/genericpotato/Desktop/git/transactionbot/soap/web2.csproj",
+        "projectUniqueName": "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/web2.csproj",
         "projectName": "web2",
-        "projectPath": "/home/genericpotato/Desktop/git/transactionbot/soap/web2.csproj",
+        "projectPath": "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/web2.csproj",
         "packagesPath": "/home/genericpotato/.nuget/packages/",
-        "outputPath": "/home/genericpotato/Desktop/git/transactionbot/soap/obj/",
+        "outputPath": "/home/genericpotato/Desktop/CloudComputing/PEs/1_soap_dotnet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/genericpotato/.nuget/NuGet/NuGet.Config"
